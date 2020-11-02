@@ -1,0 +1,125 @@
+﻿@page
+@model CunstructDB.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Заказы";
+}
+
+<h1>Заказы</h1>
+
+<p>
+    <a asp-page="Create">Добавить заказ</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CompletionMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].AboutPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].TypeOfJobID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].BrigadeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].StaffID)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompletionMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AboutPayment)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customer.First(M => M.ID == item.CustomerID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.TypeOfJob.First(M => M.ID == item.TypeOfJobID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Brigade.First(M => M.ID == item.BrigadeID).Staff1ID
+                        @Model.Brigade.First(M => M.ID == item.BrigadeID).Staff2ID
+                        @Model.Brigade.First(M => M.ID == item.BrigadeID).Staff3ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(M => M.ID == item.StaffID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<!---->

@@ -1,0 +1,59 @@
+﻿@page
+@model CunstructDB.Pages.TypeOfJobs.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить?</h3>
+<div>
+    <h4>Вид работы</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfJob.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfJob.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfJob.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfJob.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfJob.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfJob.Price)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfJob.Material1ID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfJob.Material1ID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfJob.Material2ID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfJob.Material2ID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfJob.Material3ID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfJob.Material3ID)
+        </dd>
+
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TypeOfJob.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

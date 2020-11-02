@@ -1,0 +1,64 @@
+﻿@page
+@model CunstructDB.Pages.Staffs.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить?</h3>
+<div>
+    <h4>Сотрудник</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Sex)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Sex)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.PassportData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.PassportData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff.PositionID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.PositionID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Staff.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

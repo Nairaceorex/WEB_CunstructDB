@@ -1,0 +1,40 @@
+﻿@page
+@model CunstructDB.Pages.Brigades.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить?</h3>
+<div>
+    <h4>Бригада</h4>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Brigade.Staff1ID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Brigade.Staff1ID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Brigade.Staff2ID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Brigade.Staff2ID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Brigade.Staff3ID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Brigade.Staff3ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Brigade.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

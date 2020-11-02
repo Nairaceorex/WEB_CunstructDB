@@ -1,0 +1,81 @@
+﻿@page
+@model CunstructDB.Pages.Staffs.IndexModel
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<h1>Список сотрудников</h1>
+
+<p>
+    <a asp-page="Create">Добавить сотрудника</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].PassportData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].PositionID)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Staff) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassportData)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Position.First(M => M.ID == item.PositionID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

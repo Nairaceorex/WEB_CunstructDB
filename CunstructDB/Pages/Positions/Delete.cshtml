@@ -1,0 +1,46 @@
+﻿@page
+@model CunstructDB.Pages.Positions.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить?</h3>
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Position.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Position.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Position.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Position.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Position.Responsibilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Position.Responsibilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Position.Requirements)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Position.Requirements)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Position.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

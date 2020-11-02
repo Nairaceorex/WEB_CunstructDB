@@ -1,0 +1,73 @@
+﻿@page
+@model CunstructDB.Pages.Orders.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Заказ</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.CompletionMark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.CompletionMark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.AboutPayment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.AboutPayment)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.CustomerID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.CustomerID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.TypeOfJobID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.TypeOfJobID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.BrigadeID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.BrigadeID)
+        </dd>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.StaffID)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.StaffID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Order.ID">Редактировать</a>   |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>

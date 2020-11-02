@@ -1,0 +1,43 @@
+﻿@page
+@model CunstructDB.Pages.Materials.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Материал</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Material.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Material.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Material.Packaging)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Material.Packaging)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Material.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Material.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Material.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Material.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Material.ID">Редактировать</a> |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>

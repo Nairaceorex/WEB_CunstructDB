@@ -1,0 +1,50 @@
+﻿@page
+@model CunstructDB.Pages.Positions.EditModel
+
+@{
+    ViewData["Title"] = "Редактировать";
+}
+
+<h1>Редактировать</h1>
+
+<h4>Должность</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Position.ID" />
+            <div class="form-group">
+                <label asp-for="Position.Name" class="control-label"></label>
+                <input asp-for="Position.Name" class="form-control" />
+                <span asp-validation-for="Position.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Position.Salary" class="control-label"></label>
+                <input asp-for="Position.Salary" class="form-control" />
+                <span asp-validation-for="Position.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Position.Responsibilities" class="control-label"></label>
+                <input asp-for="Position.Responsibilities" class="form-control" />
+                <span asp-validation-for="Position.Responsibilities" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Position.Requirements" class="control-label"></label>
+                <input asp-for="Position.Requirements" class="form-control" />
+                <span asp-validation-for="Position.Requirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
