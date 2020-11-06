@@ -1,0 +1,45 @@
+﻿@page
+@model CunstructDB.Pages.FilReq.Request.LiBriModel
+@{
+}
+<table class="table">
+<thead>
+    <tr>
+        <th>
+            Бригады
+        </th>
+        <th>
+            Сотрудники
+        </th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var item in Model.Brigade)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff1ID)
+                @Html.DisplayFor(modelItem => item.Staff2ID)
+                @Html.DisplayFor(modelItem => item.Staff3ID)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(M => M.ID == item.Staff1ID).FullName
+                        <a>|</a>
+                        @Model.Staff.First(M => M.ID == item.Staff2ID).FullName
+                        <a>|</a>
+                        @Model.Staff.First(M => M.ID == item.Staff3ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+        </tr>
+    }
+</tbody>
+</table>

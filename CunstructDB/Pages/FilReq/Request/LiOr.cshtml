@@ -1,0 +1,72 @@
+﻿@page
+@model CunstructDB.Pages.FilReq.Request.LiOrModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Заказы
+            </th>
+            <th>
+                Виды работ
+            </th>
+            <th>
+                Бригады
+            </th>
+            <th>
+                Сотрудники
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.TypeOfJob.First(M => M.ID == item.TypeOfJobID).Name
+                        
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Brigade.First(M => M.ID == item.BrigadeID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(M => M.ID == item.StaffID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
