@@ -18,26 +18,46 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Staffs/Index">Сотрудники</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Positions/Index">Должности</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Brigades/Index">Бригады</a>
-                        </li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                сотрудники
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Staffs/Index">Сотрудники</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Positions/Index">Должности</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Brigades/Index">Бригады</a>
+                                </li>
+                            </div>
+                        </div>
+
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/TypeOfJobs/Index">Виды работ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Materials/Index">Материалы</a>
                         </li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                заказы
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">Заказчики</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Orders/Index">Заказы</a>
+                                </li>
+                            </div>
+                        </div>
+                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">Заказчики</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Orders/Index">Заказы</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/FilReq/Index">Фильтры и Запросы</a>
                         </li>
                     </ul>
                 </div>

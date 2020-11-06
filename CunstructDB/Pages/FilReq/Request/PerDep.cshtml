@@ -1,0 +1,39 @@
+﻿@page
+@model CunstructDB.Pages.FilReq.filter.PerDepModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Сотрудник
+            </th>
+            <th>
+                Должность
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Staff)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Position.First(M => M.ID == item.PositionID).Name
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

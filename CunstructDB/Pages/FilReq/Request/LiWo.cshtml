@@ -1,0 +1,41 @@
+﻿@page
+@model CunstructDB.Pages.FilReq.Request.LiWoModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Виды работ
+            </th>
+            <th>
+                Материалы
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TypeOfJob)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Material.First(M => M.ID == item.Material1ID).Name
+                            @Model.Material.First(M => M.ID == item.Material2ID).Name
+                            @Model.Material.First(M => M.ID == item.Material3ID).Name
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
