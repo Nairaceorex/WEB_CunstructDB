@@ -3,6 +3,18 @@
 @model CunstructDB.Pages.FilReq.IndexModel
 @{
 }
+<script>
+    function BtnFun(ClassName, obj) {
+        var value = obj.value;
+        var name = "." + ClassName;
+        if (value[0] != "-") {
+            $(name).prop('disabled', false);
+        }
+        else {
+            $(name).prop('disabled', true);
+        }
+    }
+</script>
 <div class="accordion" id="accordionExample">
     <div class="card">
         <div class="card-header" id="headingOne">
@@ -38,7 +50,13 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-                
+                <form>
+                    Отобразить сотрудников с должностью:
+                    <select asp-items="Model.SelPosition" name="id" class="form-control-sm" onclick="BtnFun('FilPos', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterPosition" class="btn btn-primary FilPos" disabled>Отфильтровать</button>
+                </form>
             </div>
         </div>
     </div>
