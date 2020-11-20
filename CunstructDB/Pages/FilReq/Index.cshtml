@@ -57,6 +57,48 @@
                     </select>
                     <button asp-page="Filter/FilterPosition" class="btn btn-primary FilPos" disabled>Отфильтровать</button>
                 </form>
+                <form>
+                    Отобразить виды работ:
+                    <select asp-items="Model.SelTypeOfJob" name="id" class="form-control-sm" onclick="BtnFun('FilToJ', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FiltertTypeofJob" class="btn btn-primary FilToJ" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить заказы по типу работ:
+                    <select asp-items="Model.SelTypeOfJob" name="id" class="form-control-sm" onclick="BtnFun('FilOr', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterOrder" class="btn btn-primary FilOr" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить заказы по заказчику:
+                    <select asp-items="Model.SelCustomer" name="id" class="form-control-sm" onclick="BtnFun('FilCus', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterCustomer" class="btn btn-primary FilCus" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить заказы по бригаде:
+                    <select asp-items="Model.SelBrigade" name="id" class="form-control-sm" onclick="BtnFun('FilBri', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FlterBrigade" class="btn btn-primary FilBri" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить завершенные или не завершенные заказы:
+                    <select asp-items="Model.SelFin" name="fin" class="form-control-sm" onclick="BtnFun('FilFin', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterFin" class="btn btn-primary FilFin" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить оплаченные или не оплаченные заказы:
+                    <select asp-items="Model.SelPay" name="pay" class="form-control-sm" onclick="BtnFun('FilPay', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterPay" class="btn btn-primary FilPay" disabled>Отфильтровать</button>
+                </form>
             </div>
         </div>
     </div>

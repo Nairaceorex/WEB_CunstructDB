@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CunstructDB.Migrations
 {
     [DbContext(typeof(CunstructDBContext))]
-    [Migration("20201017180004_Initial")]
-    partial class Initial
+    [Migration("20201120094319_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,14 +122,14 @@ namespace CunstructDB.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AboutPayment")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AboutPayment")
+                        .HasColumnType("bit");
 
                     b.Property<long?>("BrigadeID")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("CompletionMark")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("CompletionMark")
+                        .HasColumnType("bit");
 
                     b.Property<long?>("CustomerID")
                         .HasColumnType("bigint");

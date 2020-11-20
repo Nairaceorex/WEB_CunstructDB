@@ -1,0 +1,37 @@
+﻿@page
+@model CunstructDB.Pages.FilReq.Filter.FlterBrigadeModel
+@{
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Заказ</th>
+            <th scope="col">Бригада</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelitem => item.ID)</td>
+                <td><ol>
+    @{
+        long str = 0;
+        try
+        {
+            str = Model.Brigade.ID;
+            <li>@str</li>
+        }
+        catch
+        {
+            <li>нет</li>
+        }
+        
+    }
+</ol><td>
+          
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CunstructDB.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,8 +16,8 @@ namespace CunstructDB.Migrations
                     Price = table.Column<int>(nullable: false),
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
-                    CompletionMark = table.Column<string>(nullable: true),
-                    AboutPayment = table.Column<string>(nullable: true),
+                    CompletionMark = table.Column<bool>(nullable: false),
+                    AboutPayment = table.Column<bool>(nullable: false),
                     CustomerID = table.Column<long>(nullable: true),
                     TypeOfJobID = table.Column<long>(nullable: true),
                     BrigadeID = table.Column<long>(nullable: true),

@@ -120,14 +120,14 @@ namespace CunstructDB.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AboutPayment")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AboutPayment")
+                        .HasColumnType("bit");
 
                     b.Property<long?>("BrigadeID")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("CompletionMark")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("CompletionMark")
+                        .HasColumnType("bit");
 
                     b.Property<long?>("CustomerID")
                         .HasColumnType("bigint");

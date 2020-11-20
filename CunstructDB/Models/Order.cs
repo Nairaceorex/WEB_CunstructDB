@@ -19,9 +19,9 @@ namespace ConstructDB.Models
         [Display(Name = "Дата оканчания")]
         public DateTime EndDate { get; set; }
         [Display(Name = "Отметка завершения")]
-        public string CompletionMark { get; set; }
+        public bool CompletionMark { get; set; }
         [Display(Name = "Об оплате")]
-        public string AboutPayment { get; set; }
+        public bool AboutPayment { get; set; }
         [Display(Name = "ID_Заказчик")]
         public long? CustomerID { get; set; }
         public DbSet<Customer> Customer { get; set; }
