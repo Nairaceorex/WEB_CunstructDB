@@ -25,7 +25,9 @@
                         try
                         {
                             @Model.Material.First(M => M.ID == item.Material1ID).Name
+                            <a>|</a>
                             @Model.Material.First(M => M.ID == item.Material2ID).Name
+                            <a>|</a>
                             @Model.Material.First(M => M.ID == item.Material3ID).Name
                         }
                         catch
